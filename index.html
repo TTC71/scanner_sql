@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Scanner Produit SQL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Scanner un produit</h1>
+
+  <p><strong>Code scanné / saisi :</strong> <span id="code-lu">-</span></p>
+
+  <div>
+    <input type="text" id="code-manuel" placeholder="Entrer un code-barres" />
+    <button onclick="validerCodeManuel()">Valider</button>
+  </div>
+
+  <h2>Résultat</h2>
+  <p><strong>Produit :</strong> <span id="produit">-</span></p>
+  <p><strong>Quantité :</strong> <span id="quantite">-</span></p>
+  <p><strong>Prix :</strong> <span id="prix">-</span></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
