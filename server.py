@@ -1,10 +1,14 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 import sqlite3
 import os
 import import_csv_fusion
 
 app = Flask(__name__)
 DB_PATH = "produits.db"
+
+@app.route("/")
+def home():
+    return send_file("index.html")
 
 @app.route("/produit")
 def get_produit():
