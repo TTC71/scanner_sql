@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scanner Produit - SQL</title>
+</head>
+<body>
+  <h1>Scanner Produit avec SQL</h1>
+  <p><strong>Total références en base :</strong> <span id="nb-references">...</span></p>
+  <p><strong>Code scanné :</strong> <span id="code-lu">-</span></p>
+
+  <div id="reader" style="width:400px;height:200px;border:1px solid #ccc;"></div>
+
+  <p style="margin-top: 20px;">
+    <label for="code-manuel">Entrer un code-barres manuellement :</label><br>
+    <input type="text" id="code-manuel" placeholder="Ex. 1234567890123" />
+    <button onclick="validerCodeManuel()">Valider</button>
+  </p>
+
+  <p><button onclick="fetch('/importer').then(r => r.json()).then(a => alert(a.message || a.error))">📥 Importer les produits</button></p>
+
+  <div id="result">
+    <p><strong>Produit :</strong> <span id="produit">-</span></p>
+    <p><strong>Quantité :</strong> <span id="quantite">-</span></p>
+    <p><strong>Prix :</strong> <span id="prix">-</span></p>
+  </div>
+
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="script.js"></script>
+</body>
+</html>
