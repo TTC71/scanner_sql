@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Scanner Produit</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+  <h1>Scanner un produit</h1>
+  <p><strong>Code scanné :</strong> <span id="code-lu">...</span></p>
+  <div id="reader" style="width:300px;"></div>
+
+  <div style="margin-top:20px;">
+    <label for="code-manuel">Entrer un code-barres manuellement :</label><br>
+    <input type="text" id="code-manuel" placeholder="Ex. 1234567890123" style="width:250px;padding:5px;">
+    <button onclick="validerCodeManuel()" style="padding:5px 10px;">Valider</button>
+  </div>
+
+  <div style="margin-top:20px;">
+    <button onclick="importerCSV()" style="padding:10px 20px;">📥 Importer les nouveaux produits</button>
+    <p id="import-result"></p>
+  </div>
+
+  <div id="result" style="margin-top:20px;">
+    <p><strong>Produit :</strong> <span id="produit">-</span></p>
+    <p><strong>Quantité :</strong> <span id="quantite">-</span></p>
+    <p><strong>Prix :</strong> <span id="prix">-</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
