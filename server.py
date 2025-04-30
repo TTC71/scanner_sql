@@ -31,6 +31,4 @@ def get_produit():
     else:
         return jsonify({"error": "Produit non trouvé"}), 404
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # Render fournit automatiquement le port
-    app.run(host="0.0.0.0", port=port)
+# pas besoin de app.run ici, car Gunicorn va l’utiliser
