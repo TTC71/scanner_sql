@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 import sqlite3
 
@@ -7,7 +6,7 @@ DB_PATH = "produits.db"
 
 @app.route("/produit")
 def get_produit():
-    code = request.args.get("code", "").strip().upper()
+    code = request.args.get("code", "").upper()
     if not code:
         return jsonify({"error": "Code-barres manquant"}), 400
 
@@ -33,4 +32,3 @@ def get_produit():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
-
