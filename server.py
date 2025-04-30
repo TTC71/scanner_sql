@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import sqlite3
+import os
 
 app = Flask(__name__)
 DB_PATH = "produits.db"
@@ -30,9 +31,6 @@ def get_produit():
     else:
         return jsonify({"error": "Produit non trouvé"}), 404
 
-import os
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
+    port = int(os.environ.get("PORT", 10000))  # Render fournit automatiquement le port
     app.run(host="0.0.0.0", port=port)
-
