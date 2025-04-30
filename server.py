@@ -32,4 +32,5 @@ def get_produit():
         return jsonify({"error": "Produit non trouvé"}), 404
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=10000)
+
